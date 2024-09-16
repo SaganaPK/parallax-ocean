@@ -1,38 +1,219 @@
-.App {
-  text-align: center;
+* Base styles */
+.app {
+  background-color: aquamarine;
+  height: 100%;
+  overflow-y: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Animation and layers */
+.animation, .animation_layer {
+  height: 100vh; /* Use viewport height */
+  min-height: 500px; /* Set a minimum height */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.animation {
+  display: block;
+  position: relative;
+  z-index: 10;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.animation_layer {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  position: absolute;
+}
+
+.animation_layer.parallax {
+  position: fixed;
+}
+
+/* Specific layers */
+#l7, #l8 {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#l7 {
+  background-image: url(./assets/images/l7.png);
+  background-position: right center;
+}
+
+#l8 {
+  background-image: url(./assets/images/l8.png);
+  background-position: left center;
+}
+
+#floor {
+  background-image: url(./assets/images/floor.webp);
+}
+
+#l4 {
+  background-image: url(./assets/images/l4.png);
+}
+
+#l9 {
+  background-image: url(./assets/images/l9.png);
+}
+
+#l6 {
+  background-image: url(./assets/images/l6.png);
+}
+
+/* Mermaid layer */
+.mermaid-layer {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  padding-left: 20px;
+  z-index: 10;
+}
+
+.mermaid-gif {
+  width: 200px;
+  height: auto;
+}
+
+/* Invitation container */
+.invitation-container {
+  background-color: #ffe6f2;
+  padding: 50px;
+  border-radius: 10px;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 20; /* Ensure content is above background layers */
+}
+
+.invitation-text {
+  font-size: 2.5rem;
+  color: #333;
+  animation: fadeIn 3s ease-in-out;
+}
+
+.invitation-container p {
+  font-size: 1.2rem;
+  color: #555;
+  animation: slideIn 3s ease-in-out;
+}
+
+/* Splish splash container */
+.splish-splash-container {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.splish-splash-text {
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  text-shadow: 
+    0 0 10px rgba(0, 255, 255, 0.7),
+    0 0 20px rgba(0, 255, 255, 0.5),
+    0 0 30px rgba(0, 255, 255, 0.3);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.rsvp-page{
+  overflow-y: auto; /* Allow vertical scrolling */
+  height: 100vh; /* Set the height to the viewport height */
+  position: relative; /* Ensure proper positioning */
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .mermaid-gif {
+    width: 150px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .invitation-container {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .invitation-text {
+    font-size: 2rem;
+  }
+
+  .invitation-container p {
+    font-size: 1rem;
+  }
+
+  .splish-splash-text {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .animation_layer.parallax {
+    position: absolute; /* Change from fixed to absolute for mobile */
+  }
+
+  #l7, #l8 {
+    background-size: contain;
+    background-position: center;
+  }
+
+  .mermaid-gif {
+    width: 120px;
+  }
+
+  .invitation-container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .invitation-text {
+    font-size: 1.5rem;
+  }
+
+  .invitation-container p {
+    font-size: 0.9rem;
+  }
+
+  .splish-splash-text {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mermaid-gif {
+    width: 100px;
+  }
+
+  .invitation-container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .invitation-text {
+    font-size: 1.3rem;
+  }
+
+  .invitation-container p {
+    font-size: 0.8rem;
+  }
+
+  .splish-splash-text {
+    font-size: 1.2rem;
   }
 }

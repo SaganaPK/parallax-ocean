@@ -1,0 +1,106 @@
+/* Basic styles for RSVP form */
+.rsvp-form-container {
+  position: relative;
+  z-index: 20; /* Ensure content is above background layers */
+  
+}
+
+.rsvp-form-container, .rsvp-form {
+  background-color: #E0FFFF;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 20px auto;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Styles for headings */
+.rsvp-form-container h2, .rsvp-form h3 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* Form element styles */
+.rsvp-form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-size: 1.2em;
+}
+
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+.rsvp-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.rsvp-form button {
+  background-color: #FFDAB9;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background-color 0.3s;
+}
+
+.rsvp-form button:hover {
+  background-color: #0077aa;
+  color: white;
+}
+
+/* Media query for mobile screens */
+@media (max-width: 600px) {
+  .rsvp-form-container, .rsvp-form {
+    padding: 10px;
+    margin: 10px;
+    width: calc(100% - 20px); /* Full width minus margins */
+    max-width: none;
+  }
+
+  .rsvp-form-container h2, .rsvp-form h3 {
+    font-size: 1.5em;
+  }
+
+  .rsvp-form label {
+    font-size: 1em;
+  }
+
+  .rsvp-form input,
+  .rsvp-form select,
+  .rsvp-form textarea {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+
+  .rsvp-form button {
+    font-size: 1em;
+    padding: 8px 16px;
+  }
+
+  
+}
+
+/* Ensure content is scrollable if it exceeds viewport height */
+@media (max-height: 600px) {
+  body {
+    height: auto;
+    min-height: 100vh;
+  }
+
+}
