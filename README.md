@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# parallax-ocean
+
+This project is focused on creating an immersive parallax effect for an underwater-themed experience. 
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
